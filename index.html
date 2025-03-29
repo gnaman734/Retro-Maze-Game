@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Maze Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="title-screen" id="titleScreen">
+            <h1 class="game-title">RETRO MAZE</h1>
+            <div class="blinking-text">PRESS START</div>
+            <button id="startButton" class="start-button">START</button>
+        </div>
+
+        <div class="level-select hidden" id="levelSelect">
+            <h2>SELECT LEVEL</h2>
+            <div class="level-grid">
+                <button class="level-button" data-level="1">1</button>
+                <button class="level-button" data-level="2">2</button>
+                <button class="level-button" data-level="3">3</button>
+                <button class="level-button" data-level="4">4</button>
+                <button class="level-button" data-level="5">5</button>
+                <button class="level-button" data-level="6">6</button>
+                <button class="level-button" data-level="7">7</button>
+                <button class="level-button" data-level="8">8</button>
+                <button class="level-button" data-level="9">9</button>
+                <button class="level-button" data-level="10">10</button>
+            </div>
+            <div class="level-description">
+                <p>Level 1: Easiest - Simple maze</p>
+                <p>Level 5: Medium - Complex paths</p>
+                <p>Level 10: Extreme - Labyrinth challenge</p>
+            </div>
+        </div>
+
+        <div class="game-screen hidden" id="gameScreen">
+            <div class="game-header">
+                <div class="level-info">LEVEL: <span id="currentLevel">1</span></div>
+                <div class="timer">TIME: <span id="timer">00:00</span></div>
+            </div>
+            
+            <div class="maze-container">
+                <div id="maze" class="maze"></div>
+                <div id="player" class="player"></div>
+                <div id="goal" class="goal"></div>
+            </div>
+
+            <div class="controls">
+                <div class="d-pad">
+                    <button id="upBtn" class="d-pad-btn up">↑</button>
+                    <button id="leftBtn" class="d-pad-btn left">←</button>
+                    <button id="rightBtn" class="d-pad-btn right">→</button>
+                    <button id="downBtn" class="d-pad-btn down">↓</button>
+                </div>
+                <button id="pauseBtn" class="pause-btn">PAUSE</button>
+            </div>
+        </div>
+
+        <div class="pause-menu hidden" id="pauseMenu">
+            <h2>PAUSED</h2>
+            <button id="resumeBtn" class="menu-button">RESUME</button>
+            <button id="restartBtn" class="menu-button">RESTART</button>
+            <button id="quitBtn" class="menu-button">QUIT</button>
+        </div>
+
+        <div class="level-complete hidden" id="levelComplete">
+            <h2>LEVEL COMPLETE!</h2>
+            <div class="stats">
+                <p>Time: <span id="completionTime">00:00</span></p>
+            </div>
+            <button id="nextLevelBtn" class="menu-button">NEXT LEVEL</button>
+            <button id="levelSelectBtn" class="menu-button">LEVEL SELECT</button>
+        </div>
+
+        <div class="game-completion hidden" id="gameCompletionScreen">
+            <h2>CONGRATULATIONS!</h2>
+            <div class="completion-message">
+                <p>You've completed all 10 levels!</p>
+            </div>
+            <div class="stats">
+                <p>You are a maze master!</p>
+            </div>
+            <button id="restartGameBtn" class="menu-button">RESTART GAME</button>
+            <button id="quitGameBtn" class="menu-button">QUIT</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
